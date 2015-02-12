@@ -3,11 +3,12 @@ To run the program follow these steps:
 make sure your in current directory on terminal before below steps
 
 Step 1: Run the Lookup server and the Broker server on two seperate windows by typing
- "./lookup.sh <port> " and  "./server.sh 5005 ", here the Broker server is dedicated a port number
-at 5005 but the lookup server port number need to be specified by you the client (don't use 5005)
+ "./lookup.sh <lookupport> " and  "./server.sh <serverport> <lookuphost> <lookupport>", 
+here the Broker server is apecifying it's own port number and connecting to the host
+and port number of the lookup server which need to be specified by you the client.
 
-Step 2:  Start the Brokerclient by typing  "./client.sh <host> <port> " where <host>
-<port> corresponds to the ip adress of the Lookup server and port is the port number with
+Step 2:  Start the Brokerclient by typing  "./client.sh <serverhost> <serverport> " where <serverhost>
+<serverport> corresponds to the ip adress of the Lookup server and port is the port number with
 which you executed the Lookup server
 
 Step 3: Type "local <file>" where <file> can be either "nasdaq" or "tse" once sucessfully connected
