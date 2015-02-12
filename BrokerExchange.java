@@ -22,6 +22,7 @@ public class BrokerExchange {
 				System.err.println("ERROR: Invalid arguments!");
 				System.exit(-1);
 			}
+
 			lookupSocket = new Socket(hostname, port);
 
 			out = new ObjectOutputStream(lookupSocket.getOutputStream());
@@ -69,7 +70,7 @@ public class BrokerExchange {
 				packetToServer.type = BrokerPacket.EXCHANGE_REMOVE;
 				packetToServer.symbol = input[1];
 			}
-					
+
 			//System.out.println(input[0]+input[1]);
 			out.writeObject(packetToServer);
 
@@ -79,7 +80,7 @@ public class BrokerExchange {
 
 
 			if (packetFromServer.type == BrokerPacket.BROKER_ERROR){
-			
+
 				if(packetFromServer.error_code == BrokerPacket.ERROR_INVALID_SYMBOL)
 					System.out.println(input[1] + " invalid.");
 					

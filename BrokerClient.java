@@ -22,6 +22,7 @@ public class BrokerClient {
 				System.err.println("ERROR: Invalid arguments!");
 				System.exit(-1);
 			}
+
 			lookupSocket = new Socket(hostname, port);
 
 			out = new ObjectOutputStream(lookupSocket.getOutputStream());
@@ -62,8 +63,7 @@ public class BrokerClient {
 				packetToServer.symbol = userInput;
 
 			}
-			out.writeObject(packetToServer);
-			
+			out.writeObject(packetToServer);	
 
 			/* print server reply */
 			BrokerPacket packetFromServer;
@@ -104,7 +104,6 @@ public class BrokerClient {
 				packetToServer.exchange = packetFromServer.exchange;
 				out.writeObject(packetToServer);
 				System.out.println(packetFromServer.exchange + " as local.");
-
 			}
 			
 			else

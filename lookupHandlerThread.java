@@ -112,7 +112,7 @@ public class lookupHandlerThread extends Thread {
 					packetToClient.error_code = BrokerPacket.ERROR_INVALID_EXCHANGE;
 					toClient.writeObject(packetToClient);
 				}
-				     
+
 			}
 
         

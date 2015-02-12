@@ -7,9 +7,10 @@ public class BrokerLookupServer{
         boolean listening = true;
 
         try {
-        	if(args.length == 1) {
-        		lookupSocket = new ServerSocket(Integer.parseInt(args[0]));
 
+        	if(args.length == 1) {
+
+        		lookupSocket = new ServerSocket(Integer.parseInt(args[0]));
         	} 
         	else {
         		System.err.println("ERROR: Invalid arguments!");
@@ -20,7 +21,6 @@ public class BrokerLookupServer{
             System.exit(-1);
         }
 
-	
         while (listening) {
 
             new lookupHandlerThread(lookupSocket.accept()).start();

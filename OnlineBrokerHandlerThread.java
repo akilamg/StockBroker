@@ -67,6 +67,7 @@ public class OnlineBrokerHandlerThread extends Thread {
 				}
 			}
 			
+
 			cache.clear();
 			deleted.clear();
 			pw.close();
@@ -222,6 +223,7 @@ public class OnlineBrokerHandlerThread extends Thread {
 				    }
 
 				    if((found == true) || (cache.containsKey(lower))){
+
 				    	System.out.println(packetFromClient.symbol + " exists.");
 				    	packetToClient.type = BrokerPacket.BROKER_ERROR;
 				    	packetToClient.error_code = BrokerPacket.ERROR_SYMBOL_EXISTS;
@@ -234,6 +236,7 @@ public class OnlineBrokerHandlerThread extends Thread {
 				    	cache.put(lower, lower + " " + "0");
 				    	packetToClient.type = BrokerPacket.EXCHANGE_ADD;
 				    	toClient.writeObject(packetToClient);
+
 				    }
 
 				    continue;
